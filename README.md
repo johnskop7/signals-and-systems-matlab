@@ -1,4 +1,4 @@
-# Signals and Systems - MATLAB DSP Project
+# Signals and Systems - MATLAB Project
 
 MATLAB implementations of fundamental digital signal-processing techniques, including digital filter design, pole-zero analysis, FFT-based spectral analysis, harmonic isolation, and audio effects.
 
