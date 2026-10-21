@@ -1,5 +1,8 @@
 # Documentation
 
-`report.pdf` is the original project report with the student registry number and email address redacted for public sharing.
+This folder contains:
 
-The original assignment handout is not redistributed in this repository because it is course material owned by the university/instructors.
+- `assignment.pdf` — the original course handout / project description
+- `report-summary.md` — a concise English summary of the main results
+
+The original project report was cleaned for portfolio use earlier, but the course handout is now also included with permission.

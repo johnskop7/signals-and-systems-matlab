@@ -1,16 +1,14 @@
 # Audio files
 
-The audio recordings used in the original university assignment are not redistributed in this repository because they were supplied as course material.
+This repository includes the input audio recordings used in the original Signals and Systems assignment:
 
-To reproduce the experiments, place the following files in `audio/input/`:
+- `audio/input/viola_series.wav`
+- `audio/input/viola_note.wav`
+- `audio/input/piano_note.wav`
 
-- `viola_series.wav`
-- `viola_note.wav`
-- `piano_note.wav`
-
-Running `src/signals_systems_project.m` generates:
+Running `src/signals_systems_project.m` generates output files such as:
 
 - `audio/output/echoed_piano_note.wav`
 - `audio/output/reverbed_piano_note.wav`
 
-The generated WAV files are ignored by Git by default.
+Generated output WAV files are ignored by Git by default.

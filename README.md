@@ -8,10 +8,10 @@ This project was developed for the **Signals and Systems** course at the **Schoo
 
 The project connects core discrete-time signals and systems theory with practical MATLAB experiments. It begins with analytical filter design and stability analysis, then applies those filters to real musical signals.
 
-### Topics covered
+The main topics are:
 
 - FIR echo filters and cascaded reverberation filters
-- inverse filtering and dereverberation
+- inverse filtering / dereverberation
 - pole-zero analysis and system stability
 - band-pass filter design
 - impulse, step, magnitude, and phase responses
@@ -25,17 +25,23 @@ The project connects core discrete-time signals and systems theory with practica
 
 ### Echo and reverberation
 
-The project implements the discrete-time echo system:
+The project implements a simple discrete-time echo system
 
-**y[n] = c x[n] + (1-c)x[n-P]**
+\[
+y[n] = c x[n] + (1-c)x[n-P],
+\]
 
-and studies how the delay parameter **P** changes the frequency response, pole-zero representation, and impulse response. A third-order reverberation effect is created by cascading three echo filters.
+and studies how the delay parameter `P` changes the frequency response, pole-zero representation, and impulse response. A third-order reverberation effect is created by cascading three echo filters.
 
 An inverse filter is also constructed and tested for dereverberation.
 
 ### Band-pass filters and stability
 
-Band-pass filters are designed directly from poles and zeros. The experiments explore how moving poles toward, onto, and outside the unit circle affects selectivity, impulse-response decay, and system stability.
+Band-pass filters are designed directly from poles and zeros. The experiments show how moving poles toward, onto, and outside the unit circle affects selectivity, impulse-response decay, and stability.
+
+<p align="center">
+  <img src="assets/pole-stability-response.png" alt="Impulse and frequency response for a band-pass filter" width="760">
+</p>
 
 ## 2. Musical Signal Analysis
 
@@ -50,17 +56,23 @@ A viola recording sampled at **44.1 kHz** is analyzed in both the time and frequ
 
 The project then uses band-pass filtering to isolate selected harmonics of a viola note.
 
+<p align="center">
+  <img src="assets/harmonic-isolation.png" alt="Second-harmonic isolation in the frequency and time domains" width="760">
+</p>
+
 ## 3. Echo and Reverb on Audio
 
 The final part applies the filters to a piano recording. With a sampling rate of 44.1 kHz, a 0.15 s echo corresponds to a delay of **6615 samples**. Three cascaded echo filters are used to create reverberation, and the resulting signals are compared in the time and frequency domains.
 
-The project also investigates when an echo is no longer perceptually distinguishable and how small delay mismatches affect dereverberation.
+<p align="center">
+  <img src="assets/echo-reverb-comparison.png" alt="Original, echoed, and reverberated piano signals" width="760">
+</p>
 
-For a concise account of the numerical observations from the original report, see **docs/report-summary.md**.
+The project also investigates when an echo is no longer perceptually distinguishable and how small delay mismatches affect dereverberation.
 
 ## Repository Structure
 
-~~~text
+```text
 signals-and-systems-matlab/
 ├── README.md
 ├── src/
@@ -71,11 +83,19 @@ signals-and-systems-matlab/
 ├── audio/
 │   ├── README.md
 │   ├── input/
+│   │   ├── piano_note.wav
+│   │   ├── viola_note.wav
+│   │   └── viola_series.wav
 │   └── output/
+├── assets/
+│   ├── pole-stability-response.png
+│   ├── harmonic-isolation.png
+│   └── echo-reverb-comparison.png
 └── docs/
     ├── README.md
+    ├── assignment.pdf
     └── report-summary.md
-~~~
+```
 
 ## Running the Project
 
@@ -86,34 +106,29 @@ signals-and-systems-matlab/
 
 ### Audio data
 
-The recordings supplied with the original university assignment are **not redistributed** here. To reproduce the audio experiments, place the following files in **audio/input/**:
-
-~~~text
-viola_series.wav
-viola_note.wav
-piano_note.wav
-~~~
+The input audio recordings used in the original assignment are included in `audio/input/`.
 
 Then run:
 
-~~~matlab
+```matlab
 run('src/signals_systems_project.m')
-~~~
+```
 
-Generated echo and reverb audio is written to **audio/output/**.
+Generated echo and reverb audio is written to `audio/output/`.
 
 ## Files
 
-- **src/signals_systems_project.m** — main implementation for the complete assignment
-- **src/scaledata.m** — helper for linear amplitude rescaling
-- **experiments/harmonic_filter_design.m** — alternative pole-zero experiment for harmonic isolation
-- **docs/report-summary.md** — concise English summary of the main results
+- `src/signals_systems_project.m` - main implementation for the complete assignment
+- `src/scaledata.m` - helper for linear amplitude rescaling
+- `experiments/harmonic_filter_design.m` - alternative pole-zero experiment for harmonic isolation
+- `docs/assignment.pdf` - original course handout / project description
+- `docs/report-summary.md` - concise English summary of the main results
 
 ## Notes
 
 This repository is a cleaned portfolio version of a university project. The implementation remains close to the original coursework so that the repository reflects the work completed at the time, while the repository structure, documentation, paths, and privacy-sensitive material have been cleaned for public presentation.
 
-The original course handout and course-provided audio recordings are intentionally not redistributed.
+The original course handout is included as `docs/assignment.pdf`, and the input audio recordings are included in `audio/input/` with permission.
 
 ## Author
 
